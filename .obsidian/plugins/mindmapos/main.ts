@@ -1,78 +1,15 @@
+import { Plugin, Notice, Modal, Setting } from "obsidian";
 import { createTypedNote } from "./src/core/router";
-import {
-  App,
-  Modal,
-  Notice,
-  Plugin,
-  Setting,
-  TFile,
-  normalizePath,
-} from "obsidian";
 import { createStarterStructure } from "./src/core/scaffold";
 import { openToday } from "./src/core/periodics";
-import { localISO } from "./src/core/utils";
+import { watchWikilinks } from "./src/core/wikilinks";
+import { registerCheckboxSync, toggleDone } from "./src/core/checkboxSync";
 
-
-/* ---------- Utils ---------- */
-function sanitizeFilename(s: string): string {
-  return s.replace(/[\\/:*?"<>|]/g, "").trim();
-}
-
-async function ensureFolder(app: App, folder: string) {
-  const parts = normalizePath(folder).split("/");
-  let cur = "";
-  for (const part of parts) {
-    cur = cur ? `${cur}/${part}` : part;
-    if (!app.vault.getAbstractFileByPath(cur)) {
-      await app.vault.createFolder(cur);
-    }
-  }
-}
-
-async function uniquePath(app: App, baseNoExt: string, ext = ".md") {
-  let p = normalizePath(`${baseNoExt}${ext}`);
-  let n = 1;
-  while (app.vault.getAbstractFileByPath(p)) {
-    p = normalizePath(`${baseNoExt} (${n})${ext}`);
-    n++;
-  }
-  return p;
-}
-
-
-/* ---------- Inline Task Creator ---------- */
-async function createTaskInline(app: App, titleRaw: string) {
-  const baseDir = "03 SaveBox/Active";
-  await ensureFolder(app, baseDir);
-
-  const title = sanitizeFilename(titleRaw) || "Untitled";
-  const filenameNoExt = `${baseDir}/📌Task - ${title}`;
-  const path = await uniquePath(app, filenameNoExt);
-
-  const body = `---
-status: Active
-priority: Medium
-done: false
-duration_hours:
----
-
-# 📌Task - ${title}
-
-- [ ] 📌Task - ${title}
-
-> created ${localISO()}
-`;
-
-  const file: TFile = await app.vault.create(path, body);
-  await app.workspace.getLeaf(true).openFile(file);
-  new Notice(`Task created: ${title}`);
-}
-
-/* ---------- Modal Prompt ---------- */
+/* ---------- Simple input modal ---------- */
 class TextPromptModal extends Modal {
   private value = "";
   constructor(
-    app: App,
+    app: any,
     private opts: {
       title: string;
       placeholder?: string;
@@ -82,7 +19,6 @@ class TextPromptModal extends Modal {
   ) {
     super(app);
   }
-
   onOpen() {
     const { contentEl } = this;
     contentEl.empty();
@@ -118,131 +54,73 @@ class TextPromptModal extends Modal {
       }
     };
   }
-
-  onClose() {
-    this.contentEl.empty();
-  }
+  onClose() { this.contentEl.empty(); }
 }
 
 /* ---------- Plugin ---------- */
-export default class MindMapOSPlugin extends Plugin {
+export default class MindMapOS extends Plugin {
   async onload() {
-    // 1) Scaffold
+    // Watchers
+    watchWikilinks(this.app);
+    registerCheckboxSync(this.app);
+
     this.addCommand({
-      id: "mindmapos-create-starter",
-      name: "MindMap OS: Create Starter Structure",
+      id: "mindmapos-toggle-done",
+      name: "MindMap OS: Toggle Done",
       callback: async () => {
-        await createStarterStructure(this.app);
-        new Notice("Starter structure created.");
+        const f = this.app.workspace.getActiveFile();
+        if (!f) return new Notice("No active file.");
+        await toggleDone(this.app, f);
+      },
+    }); 
+
+    // New item commands (route through createTypedNote)
+    const newCmd = (kind: "task" | "project" | "goal" | "area" | "habit" | "note", label: string) => {
+      this.addCommand({
+        id: `mindmapos-new-${kind}`,
+        name: `MindMap OS: New ${label}`,
+        callback: () => {
+          new TextPromptModal(this.app, {
+            title: `New ${label}`,
+            placeholder: `Enter ${label.toLowerCase()} title`,
+            cta: `Create ${label}`,
+            onSubmit: async (title) => { await createTypedNote(this.app, kind, title); },
+          }).open();
+        },
+      });
+    };
+    newCmd("task", "Task");
+    newCmd("project", "Project");
+    newCmd("goal", "Goal");
+    newCmd("area", "Area");
+    newCmd("habit", "Habit");
+    newCmd("note", "Note");
+
+    // Toggle Done (frontmatter ↔ first checkbox)
+    this.addCommand({
+      id: "mindmapos-toggle-done",
+      name: "MindMap OS: Toggle Done",
+      callback: async () => {
+        const f = this.app.workspace.getActiveFile();
+        if (!f) return new Notice("No active file.");
+        await toggleDone(this.app, f);
       },
     });
 
-    // 2) New Task
-    this.addCommand({
-      id: "mindmapos-new-task",
-      name: "MindMap OS: New Task",
-      callback: async () => {
-        new TextPromptModal(this.app, {
-          title: "New Task",
-          placeholder: "Enter task title",
-          cta: "Create Task",
-          onSubmit: async (title) => {
-            await createTaskInline(this.app, title);
-          },
-        }).open();
-      },
-    });
-	// New Project
-this.addCommand({
-  id: "mindmapos-new-project",
-  name: "MindMap OS: New Project",
-  callback: async () => {
-    new TextPromptModal(this.app, {
-      title: "New Project",
-      placeholder: "Enter project title",
-      cta: "Create Project",
-      onSubmit: async (title) => {
-        await createTypedNote(this.app, "project", title);
-      },
-    }).open();
-  },
-});
-
-// New Goal
-this.addCommand({
-  id: "mindmapos-new-goal",
-  name: "MindMap OS: New Goal",
-  callback: async () => {
-    new TextPromptModal(this.app, {
-      title: "New Goal",
-      placeholder: "Enter goal title",
-      cta: "Create Goal",
-      onSubmit: async (title) => {
-        await createTypedNote(this.app, "goal", title);
-      },
-    }).open();
-  },
-});
-
-// New Area
-this.addCommand({
-  id: "mindmapos-new-area",
-  name: "MindMap OS: New Area",
-  callback: async () => {
-    new TextPromptModal(this.app, {
-      title: "New Area",
-      placeholder: "Enter area name",
-      cta: "Create Area",
-      onSubmit: async (title) => {
-        await createTypedNote(this.app, "area", title);
-      },
-    }).open();
-  },
-});
-
-// New Habit
-this.addCommand({
-  id: "mindmapos-new-habit",
-  name: "MindMap OS: New Habit",
-  callback: async () => {
-    new TextPromptModal(this.app, {
-      title: "New Habit",
-      placeholder: "Enter habit name",
-      cta: "Create Habit",
-      onSubmit: async (title) => {
-        await createTypedNote(this.app, "habit", title);
-      },
-    }).open();
-  },
-});
-
-// New Note
-this.addCommand({
-  id: "mindmapos-new-note",
-  name: "MindMap OS: New Note",
-  callback: async () => {
-    new TextPromptModal(this.app, {
-      title: "New Note",
-      placeholder: "Enter note title",
-      cta: "Create Note",
-      onSubmit: async (title) => {
-        await createTypedNote(this.app, "note", title);
-      },
-    }).open();
-  },
-});
-
-
-    // 3) Open Today
+    // Open Today
     this.addCommand({
       id: "mindmapos-open-today",
       name: "MindMap OS: Open Today",
       callback: async () => {
         const file = await openToday(this.app);
-        if (file) await this.app.workspace.getLeaf(true).openFile(file);
+        if (file) await this.app.workspace.getLeaf(false).openFile(file);
       },
     });
 
     new Notice("MindMap OS loaded ✅");
+  }
+
+  onunload() {
+    console.log("MindMap OS unloaded");
   }
 }

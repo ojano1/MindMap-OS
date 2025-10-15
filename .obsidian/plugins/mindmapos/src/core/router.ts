@@ -1,10 +1,23 @@
-import { App, Notice, TFile, TAbstractFile, normalizePath } from "obsidian";
+// src/core/router.ts
+import {
+  App,
+  Notice,
+  TFile,
+  TAbstractFile,
+  normalizePath,
+  parseYaml,
+  stringifyYaml,
+} from "obsidian";
 import { ensureFolder, localISO } from "./utils";
 
 /* ---------- helpers ---------- */
 const rAll = (s: string, from: string, to: string) => s.split(from).join(to);
 const dateLong = (d = new Date()) =>
-  d.toLocaleDateString("en-US", { day: "2-digit", month: "short", year: "numeric" });
+  d.toLocaleDateString("en-US", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
 
 function getISOWeek(d: Date) {
   const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
@@ -45,7 +58,15 @@ function applyTokens(s: string, extra: Record<string, string> = {}) {
 }
 
 /* ---------- types/labels ---------- */
-type Kind = "task" | "project" | "goal" | "habit" | "note" | "area";
+export type Kind = "task" | "project" | "goal" | "habit" | "note" | "area";
+export const KINDS: ReadonlyArray<Kind> = [
+  "task",
+  "project",
+  "goal",
+  "habit",
+  "note",
+  "area",
+] as const;
 
 function labelFor(kind: Kind): [string, string] {
   const map: Record<Kind, [string, string]> = {
@@ -59,30 +80,90 @@ function labelFor(kind: Kind): [string, string] {
   return map[kind];
 }
 
-/* ---------- templates ---------- */
+/* ---------- template loaders ---------- */
 async function readTemplate(app: App, kind: Kind): Promise<string> {
-  const primary = normalizePath(`03 SaveBox/Templates/${labelFor(kind)[1]} Template.md`);
+  const [, label] = labelFor(kind);
+
+  const primary = normalizePath(`03 SaveBox/Templates/${label} Template.md`);
   const f1 = app.vault.getAbstractFileByPath(primary);
 
-  const fallback = normalizePath(`99 Templates/${labelFor(kind)[1]}.md`);
+  const fallback = normalizePath(`99 Templates/${label}.md`);
   const f2 = app.vault.getAbstractFileByPath(fallback);
 
   const file = (f1 ?? f2) as TAbstractFile | null;
-  if (!file) return "";
-
-  if (file instanceof TFile) {
+  if (file && file instanceof TFile) {
     return await app.vault.read(file);
   }
-  return "";
+
+  // minimal fallback (no on-page created line)
+  return `---
+created: {{date}}
+due: 
+status: Active
+done: false
+---
+
+# {{emoji}}{{label}} - {{core}}
+
+- [ ] {{emoji}}{{label}} - {{core}}
+`;
+}
+
+/* ---------- YAML upserts ---------- */
+function upsertDatesFrontmatter(content: string, createdISO: string): string {
+  const fmRe = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/;
+  const m = content.match(fmRe);
+
+  if (m) {
+    const data = (parseYaml(m[1]) ?? {}) as Record<string, any>;
+    if (!data.created) data.created = createdISO;
+    if (!("due" in data)) data.due = ""; // empty date field, shows date picker
+
+    let yaml = stringifyYaml(data).trimEnd();
+    yaml = yaml.replace(/^due:\s*(['"])?\1?$/m, "due: "); // keep empty key
+
+    const nl = m[0].includes("\r\n") ? "\r\n" : "\n";
+    return content.replace(m[0], `---${nl}${yaml}${nl}---${nl}`);
+  }
+
+  return `---\ncreated: ${createdISO}\ndue: \n---\n` + content;
+}
+
+function upsertAliases(content: string, add: string[]): string {
+  if (!add || add.length === 0) return content;
+
+  const fmRe = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/;
+  const m = content.match(fmRe);
+
+  if (!m) {
+    const yaml = stringifyYaml({ aliases: Array.from(new Set(add)) }).trimEnd();
+    return `---\n${yaml}\n---\n` + content;
+  }
+
+  const data = (parseYaml(m[1]) ?? {}) as Record<string, any>;
+  const current = Array.isArray(data.aliases)
+    ? data.aliases
+    : data.aliases
+    ? [data.aliases]
+    : [];
+  const merged = Array.from(new Set([...current, ...add].filter(Boolean)));
+  if (merged.length === 0) return content;
+
+  data.aliases = merged;
+  const nl = m[0].includes("\r\n") ? "\r\n" : "\n";
+  const yaml = stringifyYaml(data).trimEnd();
+  return content.replace(m[0], `---${nl}${yaml}${nl}---${nl}`);
 }
 
 /* ---------- main API ---------- */
 export async function createTypedNote(
   app: App,
   kind: Kind,
-  core: string
+  core: string,
+  opts?: { aliases?: string[] }
 ): Promise<TFile> {
   const [emoji, label] = labelFor(kind);
+
   const baseDir = "03 SaveBox/Active";
   await ensureFolder(app, baseDir);
 
@@ -91,19 +172,6 @@ export async function createTypedNote(
   const path = await createUnique(app, filenameNoExt);
 
   let body = await readTemplate(app, kind);
-  if (!body) {
-    body = `---
-status: Active
-done: false
----
-
-# ${emoji}${label} - ${cleanCore}
-
-- [ ] ${emoji}${label} - ${cleanCore}
-
-> created {{date}}
-`;
-  }
 
   body = applyTokens(body, {
     "{{title}}": `${emoji}${label} - ${cleanCore}`,
@@ -112,8 +180,19 @@ done: false
     "{{core}}": cleanCore,
   });
 
+  // frontmatter dates
+  body = upsertDatesFrontmatter(body, localISO());
+
+  // aliases
+  if (opts?.aliases?.length) {
+    body = upsertAliases(body, opts.aliases);
+  }
+
   const file = await app.vault.create(path, body);
-  await app.workspace.getLeaf(true).openFile(file);
+
+  // same pane by default
+  await app.workspace.getLeaf(false).openFile(file);
+
   new Notice(`${label} created: ${cleanCore}`);
   return file;
 }
