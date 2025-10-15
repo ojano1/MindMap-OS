@@ -2,6 +2,12 @@ import { App, TAbstractFile, TFile, normalizePath } from "obsidian";
 
 export const wait = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
+export function localISO(d: Date = new Date()): string {
+  // Local YYYY-MM-DD without UTC drift
+  const tz = d.getTimezoneOffset();
+  const local = new Date(d.getTime() - tz * 60 * 1000);
+  return local.toISOString().slice(0, 10);
+}
 export function pathExists(app: App, path: string): TAbstractFile | null {
   const p = normalizePath(path);
   return app.vault.getAbstractFileByPath(p) ?? null;

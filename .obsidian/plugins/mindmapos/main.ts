@@ -10,6 +10,8 @@ import {
 } from "obsidian";
 import { createStarterStructure } from "./src/core/scaffold";
 import { openToday } from "./src/core/periodics";
+import { localISO } from "./src/core/utils";
+
 
 /* ---------- Utils ---------- */
 function sanitizeFilename(s: string): string {
@@ -37,7 +39,6 @@ async function uniquePath(app: App, baseNoExt: string, ext = ".md") {
   return p;
 }
 
-const todayISO = () => new Date().toISOString().slice(0, 10);
 
 /* ---------- Inline Task Creator ---------- */
 async function createTaskInline(app: App, titleRaw: string) {
@@ -59,7 +60,7 @@ duration_hours:
 
 - [ ] 📌Task - ${title}
 
-> created ${todayISO()}
+> created ${localISO()}
 `;
 
   const file: TFile = await app.vault.create(path, body);

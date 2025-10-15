@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "Dev/Roadmap update.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Roadmap update"
+            }
+          },
+          {
+            "id": "2224e7996fa29492",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Dev/Core vs Pro.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Core vs Pro"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled.md",
+                "file": "Roadmap update.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Untitled"
+              "title": "Backlinks for Roadmap update"
             }
           },
           {
@@ -113,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled.md",
+                "file": "Roadmap update.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Untitled"
+              "title": "Outgoing links from Roadmap update"
             }
           },
           {
@@ -142,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.md",
+                "file": "Roadmap update.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "Outline of Roadmap update"
             }
           }
         ]
@@ -170,6 +185,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0f0cf00df971b660",
-  "lastOpenFiles": []
+  "active": "2224e7996fa29492",
+  "lastOpenFiles": [
+    "Dev/Untitled.md",
+    "Dev/Core vs Pro.md",
+    "Untitled.md",
+    "Dev/Roadmap update.md",
+    "Dev",
+    "Dev/Changelog.md",
+    "03 SaveBox/Active/📌Task - test.md",
+    "03 SaveBox/Active",
+    "03 SaveBox",
+    "Dev/Prompt.md",
+    "Dev/Roadmap.md"
+  ]
 }

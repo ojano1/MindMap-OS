@@ -7,12 +7,17 @@
   "scripts": {
     "dev": "node esbuild.config.mjs",
     "build": "tsc --noEmit --skipLibCheck && cross-env NODE_ENV=production node esbuild.config.mjs",
-    "deploy": "npm run build && xcopy /E /I /Y . \"C:\\Users\\homef\\Documents\\Obsidian\\devVault\\.obsidian\\plugins\\mindmapos\""
+    "deploy": "npm run build && xcopy /E /I /Y . \"C:\\Users\\homef\\Documents\\Obsidian\\MindMap-OS\\.obsidian\\plugins\\mindmapos\""
   },
   "keywords": [],
   "author": "Akhmad Fauzan",
   "license": "MIT",
-  "files": ["main.js", "manifest.json", "versions.json", "styles.css"],
+  "files": [
+    "main.js",
+    "manifest.json",
+    "versions.json",
+    "styles.css"
+  ],
   "devDependencies": {
     "@types/node": "^20.12.12",
     "@typescript-eslint/eslint-plugin": "5.29.0",

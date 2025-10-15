@@ -1,9 +1,8 @@
 import { App, Notice, TFile, TAbstractFile, normalizePath } from "obsidian";
-import { ensureFolder } from "./utils";
+import { ensureFolder, localISO } from "./utils";
 
 /* ---------- helpers ---------- */
 const rAll = (s: string, from: string, to: string) => s.split(from).join(to);
-const todayISO = () => new Date().toISOString().slice(0, 10);
 const dateLong = (d = new Date()) =>
   d.toLocaleDateString("en-US", { day: "2-digit", month: "short", year: "numeric" });
 
@@ -32,7 +31,7 @@ async function createUnique(app: App, pathNoExt: string, ext = ".md") {
 function applyTokens(s: string, extra: Record<string, string> = {}) {
   const d = new Date();
   const map: Record<string, string> = {
-    "{{date}}": todayISO(),
+    "{{date}}": localISO(d),
     "{{dateLong}}": dateLong(d),
     "{{year}}": String(d.getFullYear()),
     "{{monthShort}}": d.toLocaleString("en-US", { month: "short" }),
