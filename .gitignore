@@ -7,3 +7,5 @@
 # Allow your custom plugin only
 !.obsidian/plugins/task-done-sync/
 !.obsidian/plugins/task-done-sync/**
+!.obsidian/plugins/mindmapos/
+!.obsidian/plugins/mindmapos/**
