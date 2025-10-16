@@ -2,11 +2,12 @@
 created:
   "{ date }":
 due:
-status: Active
+status:
 done: false
-impact: Medium
+impact:
 duration_hours:
 tags: []
+slot: Morning
 ---
 
 
@@ -17,7 +18,7 @@ A one-time action you can finish in about an hour.
 
 ---
 
-## Properties to fill
+### Properties to fill
 - **Impact**: set in Properties. Select one: High, Medium, Low.
 - **duration_hours**: set in Properties. Example: `0.5` or `1`.
 
