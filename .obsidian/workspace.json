@@ -419,12 +419,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 SaveBox/Templates/🌟Wish Template.md",
+                "file": "03 SaveBox/Templates/Task Template.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "🌟Wish Template"
+              "title": "Task Template"
             }
           }
         ],
@@ -579,10 +579,11 @@
   },
   "active": "2efa5f4eb5d370ae",
   "lastOpenFiles": [
+    "03 SaveBox/Templates/Project Template.md",
+    "03 SaveBox/Templates/Goal Template.md",
+    "03 SaveBox/Active/🎯Goal - asdasdas.md",
     "03 SaveBox/Templates/Area Template.md",
     "03 SaveBox/Templates/🌟Wish Template.md",
-    "03 SaveBox/Templates/Goal Template.md",
-    "03 SaveBox/Templates/Project Template.md",
     "03 SaveBox/Templates/Starter Template.md",
     "03 SaveBox/Templates/Habit Template.md",
     "Dev/Roadmap progress.md",
@@ -593,7 +594,6 @@
     "Dev/Core vs Pro.md",
     "Dev/Changelog.md",
     "02 Execution/1 Daily/2025-10-15.md",
-    "03 SaveBox/Active/🎯Goal - asdasdas.md",
     "03 SaveBox/Active/📌Task - asdasd.md",
     "03 SaveBox/Active/🎯Goal - earaerawe.md",
     "03 SaveBox/Active/🚀Project - arer (1).md",
