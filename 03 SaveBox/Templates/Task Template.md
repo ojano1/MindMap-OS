@@ -1,13 +1,15 @@
 ---
 created:
   "{ date }":
-due:
-status:
+"_task_sync_state: false": false
 done: false
-impact:
+status:
+  - Active
+impact: Med
+due:
+slot: Morning
 duration_hours:
 tags: []
-slot: Morning
 ---
 
 
