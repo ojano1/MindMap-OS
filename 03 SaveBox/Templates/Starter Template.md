@@ -28,14 +28,11 @@ You're free to work top-down, bottom-up, or mix both as your needs change. The s
 
 ## Step 1 – List Your Areas
 
-Write your main life areas below.  
-- Use short, clear names.  
-- Create links with the prefix `area `.  
-- Click a link to open its page.
+Write your main life areas below.  Use short, clear names.  
 
 ### ✍️ My Areas
-Example: `[[area Health]]`
-- 
+ *Use links to create each wish page (prefix: `area `).*
+- [[area – ]]
 - 
 
 ---
@@ -52,10 +49,12 @@ If you’re unsure where to begin, try this AI prompt:
 (Example ideas: Fitness, Finances, Family, Learning, Creativity.)
 
 ---
+## Step 2– Click Your Area Links
+Create your Area notes by clicking the link, and continue your work from there.
 
 ### Keep in mind
 - Start with one Area.  
-- Follow the full chain once — Area → Goal → Project → Task.  
+- Complete the full chain once — Area → Wish → Goal → Project → Task.  
 - After that, add and link freely. You’ll know how it fits.
 
 ---
@@ -63,8 +62,4 @@ If you’re unsure where to begin, try this AI prompt:
 [[Link to the daily page]]
 
 ---
-
-### 💬 Quote
-
-> “If you want to live a happy life, tie it to a goal, not to people or things.”  
-> — Albert Einstein
+<p align="center">MindMap OS © All rights reserved</p>
