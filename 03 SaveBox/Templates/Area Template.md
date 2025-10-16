@@ -1,15 +1,15 @@
   
 Now break this Area down into **Wishes** — outcomes you’d love to reach in here.
 
+A **Wish** is something that would make you happy if you reached it, but you don’t fully control the outcome.   Think of it as the _byproduct_ of your Goals.
+
+Use your Wishes as motivation. They remind you why your Goals matter and keep you moving forward.
+
 ---
 
 ## Step 1 – List Your Wishes
 
-A **Wish** is something that would make you happy if you reached it, but you don’t fully control the outcome.  
 
-Think of it as the _byproduct_ of your Goals — when you reach your Goals, your Wishes often follow.  
-
-Use your Wishes as motivation. They remind you why your Goals matter and keep you moving forward.
 
 Use this structure to write each Wish:  
   **Measurable result + timeframe**
@@ -25,7 +25,7 @@ Use this structure to write each Wish:
 
 ---
 
-### Need ideas?
+#### Need ideas?
 
 Ask AI:
 
