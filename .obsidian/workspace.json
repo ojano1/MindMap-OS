@@ -419,12 +419,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dev/Roadmap progress.md",
-                "mode": "source",
-                "source": false
+                "file": "03 SaveBox/Templates/Starter Template.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Roadmap progress"
+              "title": "Starter Template"
             }
           }
         ],
@@ -485,7 +485,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 408.5
+    "width": 200
   },
   "right": {
     "id": "1801caf922c04646",
@@ -579,9 +579,13 @@
   },
   "active": "2efa5f4eb5d370ae",
   "lastOpenFiles": [
+    "03 SaveBox/Templates/Area Template.md",
+    "03 SaveBox/Templates/Starter Template.md",
+    "03 SaveBox/Templates/Habit Template.md",
+    "03 SaveBox/Templates/Wish Template.md",
+    "Dev/Roadmap progress.md",
     "Dev/Roadmap 2.md",
     "Dev/Prompt for 16 Oct.md",
-    "Dev/Roadmap progress.md",
     "Dev/Prompt.md",
     "Dev/Roadmap.md",
     "Dev/Core vs Pro.md",
@@ -601,10 +605,6 @@
     "project test.md",
     "task meg.md",
     "03 SaveBox/Active/📌Task - test sycn 2.md",
-    "task test sycn 2.md",
-    "03 SaveBox/Templates/Task Template.md",
-    "03 SaveBox/Active/📌Task - test sync.md",
-    "task test sync.md",
     "99 System",
     "04 Output",
     "03 SaveBox/Templates",
