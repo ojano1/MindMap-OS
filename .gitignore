@@ -1,11 +1,16 @@
-# Ignore all of Obsidian’s system folder
+# Ignore Obsidian system folder
 .obsidian/*
 
-# Allow the plugins folder
+# Allow all plugins folder contents to be ignored by default
 !.obsidian/plugins/
+!.obsidian/plugins/**
 
-# Allow your custom plugin only
-!.obsidian/plugins/task-done-sync/
-!.obsidian/plugins/task-done-sync/**
+# Ignore MindMap OS by default
+.obsidian/plugins/mindmapos/**
+
+# Whitelist only built files for MindMap OS
 !.obsidian/plugins/mindmapos/
-!.obsidian/plugins/mindmapos/**
+!.obsidian/plugins/mindmapos/main.js
+!.obsidian/plugins/mindmapos/manifest.json
+!.obsidian/plugins/mindmapos/styles.css
+!.obsidian/plugins/mindmapos/versions.json
