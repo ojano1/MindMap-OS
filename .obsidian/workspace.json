@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0f0cf00df971b660",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Dev/Roadmap update.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Roadmap update"
-            }
-          },
-          {
             "id": "2224e7996fa29492",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 Execution/1 Daily/Test Daily.md",
-                "mode": "preview",
+                "file": "03 SaveBox/Active/🔄Habit - dasldkasd Monday.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Test Daily"
+              "title": "🔄Habit - dasldkasd Monday"
             }
           },
           {
@@ -419,16 +405,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 SaveBox/Active/🚀Project - aegasf.md",
+                "file": "03 SaveBox/Templates/Habit Template.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "🚀Project - aegasf"
+              "title": "Habit Template"
             }
           }
-        ],
-        "currentTab": 29
+        ]
       }
     ],
     "direction": "vertical"
@@ -447,7 +432,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -501,17 +486,17 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Roadmap update.md",
+                "file": "03 SaveBox/Active/🔄Habit - adasdava.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Roadmap update"
+              "title": "Backlinks for 🔄Habit - adasdava"
             }
           },
           {
@@ -577,43 +562,43 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2efa5f4eb5d370ae",
+  "active": "2224e7996fa29492",
   "lastOpenFiles": [
     "02 Execution/1 Daily/2025-10-15.md",
-    "03 SaveBox/Active/🚀Project - aegasf.md",
-    "03 SaveBox/Templates/Project Template-.md",
-    "03 SaveBox/Templates/Task Template-.md",
-    "03 SaveBox/Active/📌Task - afagger.md",
-    "03 SaveBox/Active/📌Task - asdasdadg.md",
-    "03 SaveBox/Templates/Starter Template.md",
-    "03 SaveBox/Active/📌Task - adasd.md",
-    "03 SaveBox/Active/🔄Habit - asdasdsa.md",
-    "03 SaveBox/Active/📌Task - probe.md",
-    "03 SaveBox/Active/📌Task - adfasdger.md",
-    "03 SaveBox/Active/📌Task - sadfasfvd.md",
-    "03 SaveBox/Active/📌Task - asdasdfa.md",
-    "📌Task - teast2.md",
-    "03 SaveBox/Active/📌Task - teast2.md",
+    "03 SaveBox/Active/🔄Habit - dasldkasd Monday.md",
+    "03 SaveBox/Active/🔄Habit - fagkjh,l mon.md",
+    "03 SaveBox/Active/🔄Habit - run mon.md",
+    "03 SaveBox/Active/🔄Habit - asdasdasmonday.md",
+    "03 SaveBox/Active/🔄Habit - favvd.md",
     "03 SaveBox/Templates/Area Template.md",
-    "03 SaveBox/Templates/Goal Template.md",
-    "03 SaveBox/Active/🔄Habit - Template.md",
-    "03 SaveBox/Active/🎯Goal - asdasdas.md",
-    "03 SaveBox/Templates/🌟Wish Template.md",
-    "03 SaveBox/Templates/Habit Template.md",
-    "Dev/Roadmap progress.md",
-    "Dev/Roadmap 2.md",
-    "Dev/Prompt for 16 Oct.md",
-    "Dev/Prompt.md",
-    "Dev/Roadmap.md",
-    "99 System",
-    "04 Output",
-    "03 SaveBox/Templates",
-    "03 SaveBox/Scripts",
-    "03 SaveBox/Attachment",
-    "03 SaveBox/Archive",
+    "02 Execution/2 Weekly",
     "02 Execution/5 Yearly",
     "02 Execution/4 Quarterly",
     "02 Execution/3 Monthly",
-    "02 Execution/2 Weekly"
+    "03 SaveBox/Active/🔄Habit - afasffas.md",
+    "03 SaveBox/Templates/Goal Template.md",
+    "03 SaveBox/Templates/Project Template-.md",
+    "03 SaveBox/Templates/Task Template-.md",
+    "03 SaveBox/Templates/Habit Template.md",
+    "Dev/Roadmap progress.md",
+    "03 SaveBox/Templates/🌟Wish Template.md",
+    "03 SaveBox/Templates/Starter Template.md",
+    "03 SaveBox/Active/🚀Project - arer.md",
+    "03 SaveBox/Active/🚀Project - arer (1).md",
+    "03 SaveBox/Active/🚀Project - aegasf.md",
+    "03 SaveBox/Active/🔄Habit - Template.md",
+    "03 SaveBox/Active/🔄Habit - asdasdsa.md",
+    "03 SaveBox/Active/🔄Habit - asfavasdf.md",
+    "03 SaveBox/Active/🔄Habit - asdasdasf.md",
+    "03 SaveBox/Active/🔄Habit - afafnkln.md",
+    "03 SaveBox/Active/🔄Habit - adfasfas.md",
+    "03 SaveBox/Active/🔄Habit - adasdava.md",
+    "03 SaveBox/Active/📌Task - sadfasfvd.md",
+    "03 SaveBox/Templates",
+    "03 SaveBox/Scripts",
+    "03 SaveBox/Active",
+    "03 SaveBox/Attachment",
+    "03 SaveBox/Archive",
+    "03 SaveBox"
   ]
 }
