@@ -1,16 +1,15 @@
 ---
 type: habit
-
-created: {{date}}
-
+created:
+  "{ date }":
 done: false
 status: Active
 impact: Medium
 ---
 
-template
+
 ## Overview
 ```mindmapos-habit-monthly
 ```
 
-### ✍️ Log
+### ✍️ Log- [ ] 🔁Habit - asdasf 2025-10-17 ^2025-10-17

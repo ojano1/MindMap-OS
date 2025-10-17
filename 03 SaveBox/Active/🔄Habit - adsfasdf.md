@@ -1,8 +1,6 @@
 ---
 type: habit
-
-created: {{date}}
-
+created: 2025-10-17
 done: false
 status: Active
 impact: Medium
@@ -14,3 +12,5 @@ template
 ```
 
 ### ✍️ Log
+
+- [ ] 🔁Habit - adsfasdf 2025-10-17 ^2025-10-17
