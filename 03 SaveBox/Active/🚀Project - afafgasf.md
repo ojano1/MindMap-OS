@@ -6,11 +6,11 @@ status: Active
 done: false
 priority: Medium
 tags: []
-duration_hours:
+_project_sync_state: false
 ---
 
 ### My Project
-- [ ] {{title}}
+- [ ] 🚀Project - afafgasf
 
 This page is for one concrete deliverable that supports your Goal.  
 Now break it down into **Tasks** and **Habits** — small, trackable actions you can complete and review.
@@ -31,7 +31,7 @@ Use this structure:
 
 ### ✍️ My Tasks
 - [[task – ]]
-- 
+- [[📌Task - adfasdff]]
 
 ---
 
