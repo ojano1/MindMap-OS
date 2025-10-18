@@ -1,7 +1,7 @@
 ---
 created: 2025-10-16
-_task_sync_state: false
-done: false
+_task_sync_state: true
+done: true
 status: Active
 impact: Medium
 slot: Morning
@@ -10,8 +10,8 @@ due:
 ---
 
 ### My Task
-- [ ] afasf
-A one-time action you can finish in about an hour.
+- [x] gasfasf
+
 ---
 ### Properties to fill
 - **Impact**: Select one in Properties. Options: Hi, Med, Lo.

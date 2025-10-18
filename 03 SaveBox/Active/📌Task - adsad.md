@@ -1,19 +1,17 @@
 ---
-created: 2025-10-16
+created: 2025-10-17
 _task_sync_state: false
 done: false
 status: Active
 impact: Medium
 slot: Morning
-duration_hours:
+duration_hours: 1
 tags: []
-due:
 ---
-
 ### My Task
-- [ ] 📌Task - asdasdfa
+- [x]📌Task - Adsad
 
-A one-time action you can finish in about an hour.
+
 
 ---
 

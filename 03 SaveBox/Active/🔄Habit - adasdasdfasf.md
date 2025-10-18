@@ -1,7 +1,8 @@
 ---
 type: habit
-created: 2025-10-17
-done: false
+created: 2025-10-18
+_habit_sync_state: true
+done: true
 status: Active
 impact: Medium
 ---
@@ -13,4 +14,4 @@ template
 
 ### ✍️ Log
 
-- [ ] 🔁Habit - adsfasdf 2025-10-17 ^2025-10-17
+- [x] 🔄Habit - adasdasdfasf 2025-10-18 ^2025-10-18

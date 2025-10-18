@@ -1,17 +1,17 @@
 ---
-created: {{date}}
+created: 2025-10-18
 _task_sync_state: false
 done: false
 status: Active
 impact: Medium
 slot: Morning
-duration_hours:
+duration_hours: 1
 tags: []
 ---
 ### My Task
-- [ ] {{title}}
+- [ ] dasdasds
 
-A one-time action you can finish in about an hour.
+
 
 ---
 

@@ -1,8 +1,6 @@
 ---
 type: habit
-
-created: {{date}}
-
+created: 2025-10-18
 _habit_sync_state: false
 done: false
 status: Active
@@ -15,3 +13,5 @@ template
 ```
 
 ### ✍️ Log
+
+- [ ] 🔄Habit - asdasdas 2025-10-18 ^2025-10-18
