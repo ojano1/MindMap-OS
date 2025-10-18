@@ -9,9 +9,8 @@ status: Active
 impact: Medium
 ---
 
-template
 ## Overview
-```mindmapos-habit-monthly
+```wishmap-habit-monthly
 ```
 
 ### ✍️ Log

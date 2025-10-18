@@ -1,5 +1,5 @@
 ---
-created: 2025-10-17
+created: 2025-10-18
 _task_sync_state: false
 done: false
 status: Active
@@ -9,7 +9,7 @@ duration_hours: 1
 tags: []
 ---
 ### My Task
-- [x]📌Task - Adsad
+- [ ] 📌Task - asdasdas
 
 
 

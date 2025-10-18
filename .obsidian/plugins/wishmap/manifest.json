@@ -1,0 +1,10 @@
+{
+  "id": "wishmap",
+  "name": "WishMap",
+  "version": "0.2.0",
+  "minAppVersion": "1.6.0",
+  "description": "WishMap, a map-first productivity system for Obsidian. One-click setup with folders, templates, and time-aware notes.",
+  "author": "Akhmad Fauzan",
+  "authorUrl": "https://wishmapplugin.com",
+  "isDesktopOnly": false
+}
