@@ -6,6 +6,7 @@ done: false
 priority: Medium
 tags: []
 _project_sync_state: false
+duration_hours: 1
 ---
 
 ### My Project
@@ -31,6 +32,7 @@ Use this structure:
 ### ✍️ My Tasks
 - [[task – ]]
 - [[📌Task - afasfa]]
+- [[🎯Goal - rollup]]
 
 ---
 

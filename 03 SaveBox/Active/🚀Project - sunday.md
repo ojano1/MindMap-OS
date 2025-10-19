@@ -6,13 +6,12 @@ status: Active
 done: false
 priority: Medium
 tags: []
+duration_hours: 2
 _project_sync_state: false
-_task_sync_state: false
-duration_hours: 1
 ---
 
 ### My Project
-- [ ] 🚀Project - afafgasf
+- [ ] 🚀Project - sunday
 
 This page is for one concrete deliverable that supports your Goal.  
 Now break it down into **Tasks** and **Habits** — small, trackable actions you can complete and review.
@@ -33,8 +32,9 @@ Use this structure:
 
 ### ✍️ My Tasks
 - [[task – ]]
-- [[📌Task - adfasdff]]
-- [[🎯Goal - rollup]]
+- [[📌Task - sunday 1]]
+- [[📌Task - sunday 2]]
+- 
 
 ---
 

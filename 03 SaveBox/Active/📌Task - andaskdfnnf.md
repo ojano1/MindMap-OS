@@ -5,7 +5,7 @@ done: false
 status: Active
 impact: Medium
 slot: Morning
-duration_hours: 1
+duration_hours: 2
 tags: []
 ---
 ### My Task

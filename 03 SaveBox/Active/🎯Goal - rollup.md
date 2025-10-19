@@ -6,11 +6,12 @@ status: Active
 done: false
 priority: Medium
 tags: []
-duration_hours: 0
+duration_hours: 7
+_goal_sync_state: false
 ---
 
 ### My Goal
-- [ ] {{title}}
+- [ ] 🎯Goal - rollup
 
 Break this **Goal** into concrete **Projects** you can complete.  
 Each Project represents a clear deliverable that moves you closer to your Goal — think of them as milestones.
@@ -30,6 +31,11 @@ Use this structure to write each Project:
 ### ✍️ My Projects
 *Use links to create each Project page (prefix: `project `).*
 - [[project – ]]
+- [[🚀Project - one]]
+- [[🚀Project - sunday]]
+- [[📌Task - sunday 2]]
+- [[project adasda]]
+- [[✨Wish - rollup]]
 - 
 
 ---

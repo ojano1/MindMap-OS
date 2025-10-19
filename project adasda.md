@@ -6,6 +6,7 @@ done: false
 priority: Medium
 tags: []
 _project_sync_state: false
+duration_hours: 0
 ---
 
 ### My Project

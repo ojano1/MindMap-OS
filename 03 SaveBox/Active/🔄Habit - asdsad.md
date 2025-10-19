@@ -1,8 +1,8 @@
 ---
 type: habit
 created: 2025-10-18
-_habit_sync_state: false
-done: false
+_habit_sync_state: true
+done: true
 status: Active
 impact: Medium
 ---
@@ -13,5 +13,5 @@ impact: Medium
 
 ### ✍️ Log
 
-- [ ] 🔄Habit - asdsad 2025-10-19 ^2025-10-19
+- [x] 🔄Habit - asdsad 2025-10-19 ^2025-10-19
 - [ ] 🔄Habit - asdsad 2025-10-18 ^2025-10-18

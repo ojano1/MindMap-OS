@@ -6,6 +6,7 @@ done: false
 priority: Medium
 tags: []
 _project_sync_state: false
+duration_hours: 4
 ---
 
 ### My Project
@@ -33,6 +34,8 @@ Use this structure:
 - [[📌Task - nfadf]]
 - [[task adasdas]]
 - [[📌Task - andaskdfnnf]]
+- [[asdfasfas]]
+- [[adasdasf]]
 
 ---
 

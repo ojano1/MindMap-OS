@@ -1,5 +1,5 @@
 ---
-created: 2025-10-18
+created: 2025-10-19
 _task_sync_state: false
 done: false
 status: Active
@@ -9,7 +9,7 @@ duration_hours: 1
 tags: []
 ---
 ### My Task
-- [ ] 📌Task - adfasdff
+- [ ] 📌Task - sunday 1
 
 
 

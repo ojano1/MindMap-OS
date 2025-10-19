@@ -1,15 +1,15 @@
 ---
-created: 2025-10-18
+created: 2025-10-19
 _task_sync_state: false
 done: false
 status: Active
 impact: Medium
 slot: Morning
-duration_hours: 1
+duration_hours: 2
 tags: []
 ---
 ### My Task
-- [ ] 📌Task - adfasdff
+- [ ] 📌Task - coba
 
 
 
